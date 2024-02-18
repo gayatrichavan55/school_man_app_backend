@@ -18,4 +18,12 @@ public class UserService {
 
 	}
 
+	public UserInfo login(String email) {
+		
+		UserInfo user = userInfoRepository.findByEmail(email);
+
+		return user;
+
+	}
+
 }

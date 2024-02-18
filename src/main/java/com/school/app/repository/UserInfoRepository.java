@@ -6,4 +6,5 @@ import com.school.app.model.UserInfo;
 
 public interface UserInfoRepository extends CrudRepository<UserInfo, Integer> {
 
+	public UserInfo findByEmail(String email);
 }

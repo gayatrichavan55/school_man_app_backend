@@ -43,9 +43,12 @@ public class UserController {
 	}
 
 	@GetMapping("/login/{email}")
-	public String login(@PathVariable String email) {
+	public ResponseEntity<?> login(@PathVariable String email) {
 		System.out.println(email);
-		return new String("loged in");
+		
+		UserInfo login = userService.login(email);
+		
+		return ResponseEntity.status(HttpStatus.CREATED).body(login);
 	}
 
 }
